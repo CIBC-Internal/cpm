@@ -208,7 +208,11 @@
 #
 # TODO: Consolidate the definitions, includes, and target_lib map lists.
 # TODO: Add ability to patch source directories after we download them.
-#
+
+if(CMAKE_VERSION VERSION_EQUAL 3.1 OR CMAKE_VERSION VERSION_GREATER 3.1)
+  cmake_policy(SET CMP0054 NEW)
+endif()
+
 #-------------------------------------------------------------------------------
 # Pre-compute a regex to match documented keywords for each command.
 #-------------------------------------------------------------------------------
